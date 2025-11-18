@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bsort"
+version = "0.1.0"
+description = "Bottle cap color sorter (light blue, dark blue, others)"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  {name="Suirfan", email="suirfan20@gmail.com"}
+]
+
+dependencies = [
+  "ultralytics>=8.0.0",
+  "opencv-python>=4.9.0.0",
+  "numpy>=1.26.0",
+  "pillow>=10.0.0",
+  "pyyaml>=6.0.0",
+  "typer[all]>=0.12.0",
+  "wandb>=0.17.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0.0",
+  "black>=24.0.0",
+  "isort>=5.13.0",
+  "pylint>=3.0.0",
+]
+
+[project.scripts]
+bsort = "bsort.cli:app"
+
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+[tool.isort]
+profile = "black"
+
+[tool.pylint.'MESSAGES CONTROL']
+disable = [
+  "missing-docstring",
+  "too-few-public-methods",
+  "too-many-arguments",
+]
+
+
+[project.urls]
+homepage = "https://github.com/suirfan20/ada-mata-bsort"
+repository = "https://github.com/suirfan20/ada-mata-bsort"
+
+
+

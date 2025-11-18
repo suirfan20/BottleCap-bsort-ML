@@ -1,0 +1,29 @@
+dataset:
+  train_images: "data/train/images"
+  train_labels: "data/train/labels"
+  val_images: "data/val/images"
+  val_labels: "data/val/labels"
+  num_classes: 3
+
+training:
+  epochs: 120
+  batch_size: 16
+  img_size: 480
+  learning_rate: 0.0005
+  device: "cpu"   # atau "cpu"
+
+model:
+  name: "yolov8n"
+  pretrained_weights: "yolov8n.pt"
+  output_dir: "artifacts"
+  best_model_path: "artifacts/bsort_train/weights/best.pt"
+
+inference:
+  conf_threshold: 0.2
+  iou_threshold: 0.45
+  output_dir: "outputs"
+
+wandb:
+  enabled: false      # set true kalau mau tracking beneran
+  project: "bottlecap-sorter"
+  entity: "your_wandb_username"

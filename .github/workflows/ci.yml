@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: ["main", "master"]
+  pull_request:
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+          pip install -e ".[dev]"
+
+      - name: Code formatting (black)
+        run: black --check src tests
+
+      - name: Import sorting (isort)
+        run: isort --check-only src tests
+
+      - name: Lint (pylint)
+        run: pylint src/bsort
+
+      - name: Tests (pytest)
+        run: pytest -q
+
+      - name: Build Docker image
+        run: docker build -t bsort:latest .

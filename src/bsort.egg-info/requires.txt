@@ -1,0 +1,13 @@
+ultralytics>=8.0.0
+opencv-python>=4.9.0.0
+numpy>=1.26.0
+pillow>=10.0.0
+pyyaml>=6.0.0
+typer[all]>=0.12.0
+wandb>=0.17.0
+
+[dev]
+pytest>=8.0.0
+black>=24.0.0
+isort>=5.13.0
+pylint>=3.0.0
