@@ -20,6 +20,7 @@ class BottleCapModel:
         self.model_name = model_name
         self.model = YOLO(pretrained_weights)
 
+    # pylint: disable=too-many-positional-arguments
     def train(
         self,
         data_yaml_path: str | Path,

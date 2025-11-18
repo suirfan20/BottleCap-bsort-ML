@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 from typing import Optional
+import yaml
 
 import wandb
 
@@ -19,7 +20,7 @@ def build_yolo_data_yaml(cfg: AppConfig, output_path: str | Path) -> Path:
     Returns:
         Path to the created YAML file.
     """
-    import yaml  # lokal import biar mudah mocking di unit test
+    
 
     data = {
         "train": str(Path(cfg.dataset.train_images).resolve()),

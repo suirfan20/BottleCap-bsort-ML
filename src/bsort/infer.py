@@ -9,6 +9,7 @@ import numpy as np
 from .config import AppConfig
 from .model import BottleCapModel
 
+# pylint: disable=E1101
 
 def draw_boxes(
     image: np.ndarray,
