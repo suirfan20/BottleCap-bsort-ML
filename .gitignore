@@ -1,5 +1,4 @@
-# Python venv
 venv/
-.env
-*.pyc
 __pycache__/
+.git/
+.gitignore
