@@ -12,7 +12,9 @@ app = typer.Typer(help="Bottle cap sorter (bsort) CLI.")
 
 
 @app.command()
-def train(config: str = typer.Option(..., help="Path to settings YAML config.")) -> None:
+def train(
+    config: str = typer.Option(..., help="Path to settings YAML config.")
+) -> None:
     """Train the bottle cap detection model."""
     cfg = load_config(config)
     typer.echo("Starting training...")

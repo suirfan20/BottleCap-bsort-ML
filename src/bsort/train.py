@@ -57,9 +57,7 @@ def train_pipeline(cfg: AppConfig, run_name: Optional[str] = None) -> None:
             },
         )
 
-    data_yaml = build_yolo_data_yaml(
-        cfg, project_dir / "data_bottlecap.yaml"
-    )
+    data_yaml = build_yolo_data_yaml(cfg, project_dir / "data_bottlecap.yaml")
 
     model = BottleCapModel(
         model_name=cfg.model.name,

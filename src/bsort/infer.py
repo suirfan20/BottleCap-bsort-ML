@@ -47,7 +47,9 @@ def draw_boxes(
     return img
 
 
-def run_inference(cfg: AppConfig, image_path: str, output_path: str | None = None) -> str:
+def run_inference(
+    cfg: AppConfig, image_path: str, output_path: str | None = None
+) -> str:
     """Run inference on a single image and save the result.
 
     Args:
@@ -81,9 +83,17 @@ def run_inference(cfg: AppConfig, image_path: str, output_path: str | None = Non
             conf = float(box.conf.item())
             print(f" - cls={cls_id}, conf={conf:.2f}")
 
-    boxes = results.boxes.xyxy.cpu().numpy().tolist() if results.boxes is not None else []
-    scores = results.boxes.conf.cpu().numpy().tolist() if results.boxes is not None else []
-    class_ids = results.boxes.cls.cpu().numpy().astype(int).tolist() if results.boxes is not None else []
+    boxes = (
+        results.boxes.xyxy.cpu().numpy().tolist() if results.boxes is not None else []
+    )
+    scores = (
+        results.boxes.conf.cpu().numpy().tolist() if results.boxes is not None else []
+    )
+    class_ids = (
+        results.boxes.cls.cpu().numpy().astype(int).tolist()
+        if results.boxes is not None
+        else []
+    )
     class_names = ["light_blue", "dark_blue", "others"]
 
     img_out = draw_boxes(img, boxes, scores, class_ids, class_names)
