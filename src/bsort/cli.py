@@ -1,12 +1,13 @@
 from __future__ import annotations
 
-# from pathlib import Path
-
 import typer
 
 from .config import load_config
 from .infer import run_inference
 from .train import train_pipeline
+
+# from pathlib import Path
+
 
 app = typer.Typer(help="Bottle cap sorter (bsort) CLI.")
 
