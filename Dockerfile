@@ -8,14 +8,13 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 COPY pyproject.toml README.md ./
-
+COPY src ./src
+COPY settings.yaml ./settings.yaml
 
 RUN python -m pip install --upgrade pip && \
     pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu && \
     pip install .
 
-COPY src ./src
-COPY settings.yaml ./settings.yaml
 
 RUN mkdir -p artifacts outputs
 

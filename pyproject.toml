@@ -34,6 +34,12 @@ dev = [
 bsort = "bsort.cli:app"
 
 
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
 [tool.black]
 line-length = 88
 target-version = ["py311"]
@@ -52,8 +58,8 @@ disable = [
 
 
 [project.urls]
-homepage = "https://github.com/suirfan20/ada-mata-bsort"
-repository = "https://github.com/suirfan20/ada-mata-bsort"
+homepage = "https://github.com/suirfan20/BottleCap-bsort-ML"
+repository = "https://github.com/suirfan20/BottleCap-bsort-ML"
 
 
 

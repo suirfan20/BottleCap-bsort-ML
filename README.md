@@ -1,7 +1,7 @@
 # bsort — Bottle Cap Color Detection
 
 📌 **GitHub Repository**  
-https://github.com/suirfan20/ada-mata-bsort
+https://github.com/suirfan20/BottleCap-bsort-ML
 
 📌 **Docker Image (optional)**  
 ghcr.io/suirfan20/bsort:latest

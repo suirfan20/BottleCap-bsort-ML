@@ -1,33 +1,38 @@
 version: "3.9"
 
+x-app-build: &app-build
+  context: .
+  dockerfile: Dockerfile
+
 services:
   bsort:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: *app-build
     container_name: bsort_app
     command: ["sleep", "infinity"]  # biar kontainer hidup terus
+    working_dir: /app
     volumes:
       - ./:/app
       - ./data:/app/data
       - ./artifacts:/app/artifacts
       - ./outputs:/app/outputs
     environment:
-      - WANDB_MODE=dryrun   # disable wandb tracking jika belum login
-
-
+      - PYTHONUNBUFFERED=1
+      - WANDB_MODE=dryrun  # disable wandb kalau belum login
 
   notebook:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: *app-build
     container_name: bsort_notebook
+    working_dir: /app
     command: >
-      jupyter notebook --ip=0.0.0.0 --no-browser --allow-root --NotebookApp.token=''
+      jupyter notebook
+      --ip=0.0.0.0
+      --no-browser
+      --allow-root
+      --NotebookApp.token=''
     ports:
       - "8888:8888"
     volumes:
       - ./:/app
       - ./data:/app/data
-
-
+    depends_on:
+      - bsort
