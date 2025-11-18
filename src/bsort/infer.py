@@ -11,6 +11,7 @@ from .model import BottleCapModel
 
 # pylint: disable=E1101
 
+
 def draw_boxes(
     image: np.ndarray,
     boxes: List[List[float]],

@@ -20,7 +20,6 @@ def build_yolo_data_yaml(cfg: AppConfig, output_path: str | Path) -> Path:
     Returns:
         Path to the created YAML file.
     """
-    
 
     data = {
         "train": str(Path(cfg.dataset.train_images).resolve()),
