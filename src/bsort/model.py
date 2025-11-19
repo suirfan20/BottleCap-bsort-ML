@@ -16,6 +16,7 @@ class BottleCapModel:
             model_name: Model architecture name (e.g. 'yolov8n').
             pretrained_weights: Path or alias to pretrained weights file.
         """
+
         # Bisa langsung pakai weights, nama cuma buat dokumentasi
         self.model_name = model_name
         self.model = YOLO(pretrained_weights)
@@ -56,6 +57,7 @@ class BottleCapModel:
             device=device,
             project=str(project_dir),
             name=run_name,
+            plots=True,  # generate semua plot (loss, PR curve, confusion matrix, dll)
         )
         return results
 

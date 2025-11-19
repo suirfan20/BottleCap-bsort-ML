@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import Optional
 
 import yaml
+
 import wandb
 
 from .config import AppConfig
@@ -54,6 +55,8 @@ def train_pipeline(cfg: AppConfig, run_name: Optional[str] = None) -> None:
                 "batch_size": cfg.training.batch_size,
                 "img_size": cfg.training.img_size,
                 "learning_rate": cfg.training.learning_rate,
+                "device": cfg.training.device,
+                "model_name": cfg.model.name,
             },
         )
 
