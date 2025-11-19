@@ -57,9 +57,4 @@ disable = [
 ]
 
 
-[project.urls]
-homepage = "https://github.com/suirfan20/BottleCap-bsort-ML"
-repository = "https://github.com/suirfan20/BottleCap-bsort-ML"
-
-
 

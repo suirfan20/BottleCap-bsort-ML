@@ -19,20 +19,20 @@ services:
       - PYTHONUNBUFFERED=1
       - WANDB_MODE=dryrun  # disable wandb kalau belum login
 
-  notebook:
-    build: *app-build
-    container_name: bsort_notebook
-    working_dir: /app
-    command: >
-      jupyter notebook
-      --ip=0.0.0.0
-      --no-browser
-      --allow-root
-      --NotebookApp.token=''
-    ports:
-      - "8888:8888"
-    volumes:
-      - ./:/app
-      - ./data:/app/data
-    depends_on:
-      - bsort
+  # notebook:
+  #   build: *app-build
+  #   container_name: bsort_notebook
+  #   working_dir: /app
+  #   command: >
+  #     jupyter notebook
+  #     --ip=0.0.0.0
+  #     --no-browser
+  #     --allow-root
+  #     --NotebookApp.token=''
+  #   ports:
+  #     - "8888:8888"
+  #   volumes:
+  #     - ./:/app
+  #     - ./data:/app/data
+  #   depends_on:
+  #     - bsort

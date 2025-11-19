@@ -10,7 +10,7 @@ training:
   batch_size: 16
   img_size: 480
   learning_rate: 0.0005
-  device: "cpu"   # atau "cpu"
+  device: "cpu"   # "cuda" atau "cpu"
 
 model:
   name: "yolov8n"

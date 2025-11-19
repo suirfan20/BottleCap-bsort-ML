@@ -13,7 +13,7 @@ cache: false
 device: cpu
 workers: 8
 project: artifacts
-name: bsort_train
+name: bsort_train2
 exist_ok: false
 pretrained: true
 optimizer: auto
@@ -103,4 +103,4 @@ auto_augment: randaugment
 erasing: 0.4
 cfg: null
 tracker: botsort.yaml
-save_dir: E:\Suirfan\ML_Projects\ada-mata-bsort\artifacts\bsort_train
+save_dir: E:\Suirfan\ML_Projects\ada-mata-bsort\artifacts\bsort_train2

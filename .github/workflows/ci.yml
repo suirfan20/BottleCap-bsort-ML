@@ -102,47 +102,4 @@ jobs:
         if: always()
         run: docker compose down
 
-
-        
-  # docker:
-  #   name: Build & Push Docker Image
-  #   needs: test
-  #   runs-on: ubuntu-latest
-
-  #   permissions:
-  #     contents: read
-  #     packages: write
-
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v4
-
-  #     # Build Docker image
-  #     - name: Build image
-  #       run: docker build -t bsort:latest .
-
-  #     # Test the image before pushing
-  #     - name: Test image (bsort --help)
-  #       run: docker run --rm bsort:latest --help
-
-  #     # Login to GitHub Container Registry
-  #     - name: Login to GHCR
-  #       run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-
-  #     # Tag the image with commit SHA
-  #     - name: Tag image
-  #       run: |
-  #         IMAGE_ID=ghcr.io/${{ github.repository_owner }}/bsort
-  #         VERSION=${{ github.sha }}
-
-  #         docker tag bsort:latest $IMAGE_ID:latest
-  #         docker tag bsort:latest $IMAGE_ID:$VERSION
-
-  #     # Push the image to GHCR
-  #     - name: Push image
-  #       run: |
-  #         IMAGE_ID=ghcr.io/${{ github.repository_owner }}/bsort
-  #         VERSION=${{ github.sha }}
-
-  #         docker push $IMAGE_ID:latest
-  #         docker push $IMAGE_ID:$VERSION
+   
