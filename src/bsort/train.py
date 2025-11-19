@@ -67,7 +67,7 @@ def train_pipeline(cfg: AppConfig, run_name: Optional[str] = None) -> None:
         pretrained_weights=cfg.model.pretrained_weights,
     )
 
-    results = model.train(
+    _ = model.train(
         data_yaml_path=data_yaml,
         epochs=cfg.training.epochs,
         batch_size=cfg.training.batch_size,
