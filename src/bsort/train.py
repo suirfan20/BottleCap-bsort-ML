@@ -76,16 +76,12 @@ def train_pipeline(cfg: AppConfig, run_name: Optional[str] = None) -> None:
         run_name=run_name or "bsort_train",
     )
 
-    # TRAINING (folder YOLO dibuat setelah fungsi ini selesai)
     exp_name = run_name or "bsort_train"
-
-    # PATH best weight YOLO
     best_weights_path = project_dir / exp_name / "weights" / "best.pt"
 
     if not best_weights_path.exists():
         raise FileNotFoundError(f"Best weights not found at: {best_weights_path}")
 
-    # COPY ke artifacts/best.pt
     dest_path = Path(cfg.model.best_model_path)
     dest_path.parent.mkdir(parents=True, exist_ok=True)
     dest_path.write_bytes(best_weights_path.read_bytes())
