@@ -4,7 +4,6 @@ from pathlib import Path
 from typing import Optional
 
 import yaml
-
 import wandb
 
 from .config import AppConfig
