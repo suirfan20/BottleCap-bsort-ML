@@ -1,7 +1,0 @@
-names:
-- light_blue
-- dark_blue
-- others
-nc: 3
-train: E:\Suirfan\ML_Projects\ada-mata-bsort\data\train\images
-val: E:\Suirfan\ML_Projects\ada-mata-bsort\data\val\images
