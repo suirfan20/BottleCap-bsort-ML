@@ -1,9 +1,6 @@
 from ultralytics import YOLO
 
-
-
-model = YOLO("artifacts/bsort_train/weights/best.pt")  # ganti path sesuai punyamu
-
+model = YOLO("artifacts/bsort_train/weights/best.pt")  
 
 print("nc:", model.model.nc)
 print("names:", model.names)

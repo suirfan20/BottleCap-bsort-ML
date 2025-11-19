@@ -10,7 +10,7 @@ training:
   batch_size: 16
   img_size: 480
   learning_rate: 0.0005
-  device: "cpu"   # "cuda" atau "cpu"
+  device: "cpu"
 
 model:
   name: "yolov8n"
@@ -24,6 +24,6 @@ inference:
   output_dir: "outputs"
 
 wandb:
-  enabled: false      # set true kalau mau tracking beneran
-  project: "bottlecap-sorter"
-  entity: "your_wandb_username"
+  enabled: true      # set true kalau mau tracking beneran
+  project: "BottleCap-bsort-ML"
+  entity: "suirfan20-"

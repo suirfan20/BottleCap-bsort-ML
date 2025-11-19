@@ -9,7 +9,6 @@ import yaml
 from .config import AppConfig
 from .model import BottleCapModel
 
-
 def build_yolo_data_yaml(cfg: AppConfig, output_path: str | Path) -> Path:
     """Create YOLO data.yaml file from config.
 

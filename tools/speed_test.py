@@ -2,10 +2,8 @@ from ultralytics import YOLO
 import cv2
 import time
 
-# Load model
 model = YOLO("artifacts/bsort_train/weights/best.pt")
 
-# Ganti ke gambar apa saja
 img = cv2.imread("data/val/images/raw-250110_dc_s001_b4_1.jpg")
 
 # Warmup 3x (biar hasil stabil)

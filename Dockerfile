@@ -2,7 +2,7 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Dependencies untuk OpenCV, dll (sesuaikan kalau error)
+
 RUN apt-get update && apt-get install -y \
     libgl1 \
     libglib2.0-0 \
