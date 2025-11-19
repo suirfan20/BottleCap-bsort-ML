@@ -9,7 +9,7 @@ description = "Bottle cap color sorter (light blue, dark blue, others)"
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [
-  {name="Suirfan", email="suirfan20@gmail.com"}
+  {name="Suirfan", email="suir@gmail.com"}
 ]
 
 dependencies = [

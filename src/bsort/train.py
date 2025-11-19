@@ -76,18 +76,9 @@ def train_pipeline(cfg: AppConfig, run_name: Optional[str] = None) -> None:
         run_name=run_name or "bsort_train",
     )
 
-    # # ambil best weight dari Ultralytics (biasanya di runs/detect/bsort_train/weights/best.pt)
-    # best_weights = results.best  # path string
-    # Path(cfg.model.best_model_path).parent.mkdir(parents=True, exist_ok=True)
-    # Path(cfg.model.best_model_path).write_bytes(Path(best_weights).read_bytes())
-
-    # if cfg.wandb.enabled:
-    #     wandb.finish()
-
-
     # TRAINING (folder YOLO dibuat setelah fungsi ini selesai)
     exp_name = run_name or "bsort_train"
-    
+
     # PATH best weight YOLO
     best_weights_path = project_dir / exp_name / "weights" / "best.pt"
 
@@ -101,5 +92,3 @@ def train_pipeline(cfg: AppConfig, run_name: Optional[str] = None) -> None:
 
     if cfg.wandb.enabled:
         wandb.finish()
-
-
