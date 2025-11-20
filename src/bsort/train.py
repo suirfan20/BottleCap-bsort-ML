@@ -3,9 +3,8 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Optional
 
-import yaml
-
 import wandb
+import yaml
 
 from .config import AppConfig
 from .model import BottleCapModel
