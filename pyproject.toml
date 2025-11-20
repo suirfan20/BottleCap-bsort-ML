@@ -47,6 +47,9 @@ target-version = ["py311"]
 [tool.isort]
 profile = "black"
 line_length = 88
+force_single_line = false
+known_first_party = ["bsort"]
+
 
 
 [tool.pylint.'MESSAGES CONTROL']

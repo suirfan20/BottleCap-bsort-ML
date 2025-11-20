@@ -71,6 +71,8 @@ def benchmark(
     ),
 ) -> None:
     """Benchmark inference latency (ms per frame) on video/webcam."""
+    # pylint: disable=too-many-locals
+
     cfg = load_config(config)
 
     # Tentukan path weights
@@ -98,7 +100,7 @@ def benchmark(
     else:
         video_source = source
 
-    cap = cv2.VideoCapture(video_source)
+    cap = cv2.VideoCapture(video_source)  # pylint: disable=no-member
     if not cap.isOpened():
         typer.echo(f"[ERROR] Cannot open video source: {source}")
         raise typer.Exit(code=1)
