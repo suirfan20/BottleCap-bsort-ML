@@ -4,3 +4,4 @@ artifacts/
 outputs/
 runs/
 wandb/
+dist/

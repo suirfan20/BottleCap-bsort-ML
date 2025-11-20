@@ -89,4 +89,7 @@ def train_pipeline(cfg: AppConfig, run_name: Optional[str] = None) -> None:
     dest_path.write_bytes(best_weights_path.read_bytes())
 
     if cfg.wandb.enabled:
+        artifact = wandb.Artifact("best_model", type="model")
+        artifact.add_file(str(dest_path))
+        wandb.log_artifact(artifact)
         wandb.finish()

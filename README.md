@@ -87,15 +87,12 @@ Isi notebook mencakup:
 - relabeling warna via HSV
 - training
 - evaluasi
-- inference speed test
-- catatan & limitasi
+- inference speed
+- Model Evaluation Section
 
 ### 8.2 Inference Speed
-Dilakukan di device (CPU only):
-Device: Intel i7-7500U, 8GB RAM
-Image size: 320×320
-Average inference time: ~50 ms/frame
-FPS: ~19.4
+**Inference Latency (CPU-only):**  
+Average 73.70 ms/frame (~13–14 FPS) pada input 480×480.
 
 ## 9. Color Relabeling Logic (HSV)
 Logika relabel:
@@ -110,8 +107,14 @@ Logika relabel:
 ## 11. Weights & Biases (Optional)
 W&B project: https://wandb.ai/suirfan20-/BottleCap-bsort-ML
 
+## 12. Install Jupyter Notebook (Optional)
+- venv\Scripts\activate
+- pip install notebook
+- pip install ipykernel
+- python -m ipykernel install --user --name bsort --display-name "Python (bsort-venv)"
+- python -m notebook
 
-## 12. CI/CD
+## 13. CI/CD
 Pipeline CI/CD:
     - Lint (black, isort, pylint)
     - Unit test (pytest)
@@ -119,7 +122,7 @@ Pipeline CI/CD:
 Semua terdapat di: .github/workflows/ci.yml
 
 
-## 13. Reproduce
+## 14. Reproduce
 git clone <repo>
 cd ada-mata-bsort
 pip install -e ".[dev]"
